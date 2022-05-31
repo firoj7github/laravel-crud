@@ -29,4 +29,25 @@ class StudentController extends Controller
      $student-> save();
      return redirect()->back();
   }
+  public function list(){
+    $students=Student::get();
+    return view ('student-list', compact('students'));
+  }
+  public function delete_student($id){
+  $data=Student::find($id);
+  $data->delete();
+  return redirect()->back();
+  }
+  public function edit_student($id){
+    $data=Student::find($id);
+    return view('edit_student', compact('data'));
+  }
+  public function update_student(Request $update, $id){
+    $data=Student::find($id);
+    $data->name=$update->name;
+    $data->email=$update->email;
+    $data->phone=$update->phone;
+    $data->save();
+    return redirect()->back();
+  }
 }

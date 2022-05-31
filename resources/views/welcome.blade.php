@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home Page</h1>
+   <a href="{{route('signin')}}"><button>Signin</button></a>
+   <a href="{{route('signup')}}"><button>Signup</button></a>
+   <a href="{{route('list')}}"><button>List</button></a>
 </body>
 </html>
